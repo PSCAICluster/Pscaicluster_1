@@ -45,7 +45,7 @@
         nav a {
             color: var(--link-color);
             text-decoration: none;
-            margin-left: 10px;
+            margin-left: 30px;
             font-size: 14px; /* 제목보다 작은 글씨 */
         }
 
@@ -86,9 +86,21 @@
         <a href="intro.html" title="소개 페이지로 이동">소개</a>
         <a href="board.html" title="게시판으로 이동">게시판</a>
     </nav>
-    <div class="company-ci"></div>
 </header>
 
+<style>
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* 요소들을 양쪽 정렬 */
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        gap: 15px; /* 링크 사이 간격 */
+    }
+</style>
 <div class="hero">
     <!-- 여기에 이미지나 회사 느낌을 표현할 수 있는 콘텐츠를 추가하세요 -->
     <h2>환영합니다! PSC AI CLUSTER의 미래에 동참하세요.</h2>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 작성 | PSC AI Cluster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1 onclick="window.location.href='index.html'">PSC AI Cluster</h1>
+    <nav>
+        <a href="intro.html">사단법인 소개</a>
+        <a href="board.html">게시판</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>자유 게시판에 글 작성하기</h2>
+</div>
+
+<div class="content">
+    <!-- 게시글 작성 폼 -->
+    <form action="submit_post.php" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">제목</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="content">내용</label>
+            <textarea id="content" name="content" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="file">첨부 파일</label>
+            <input type="file" id="file" name="file">
+        </div>
+        
+        <div class="form-group">
+            <button type="submit">글 작성</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+    <p><strong>사단법인 PSC AI Cluster</strong></p>
+    <p>주소: 서울특별시 강남구 테헤란로 310, 708호(역삼동)</p>
+</footer>
+
+</body>
+</html>

@@ -37,6 +37,11 @@
             cursor: pointer;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a {
             color: var(--link-color);
             text-decoration: none;
@@ -65,10 +70,12 @@
         footer {
             background-color: #eeeeee;
             padding: 20px;
-            text-align: center;
-            font-size: 14px;
+            text-align: left; /* 좌측 정렬 */
+            font-size: 12px; /* 작은 글씨 */
+            line-height: 1.2; /* 줄 간격 조정 */
             margin-top: 30px;
         }
+
     </style>
 </head>
 <body>
@@ -91,6 +98,20 @@
     <h3>하남 교산 AI 혁신클러스터</h3>
     <p>AI+X 대학원, 각급 연구센터, KT AI-Infra, 교육지원센터 등이 핵심시설로 구성될 "하남 교산 AI 혁신클러스터"는 전 세계 AI+X 기반의 첨단 기술과 R&D 인재를 흡수/배출하는 허브이자 기술과 인재를 확보하기 위해 글로벌 기업이 찾아오는 "미래산업형 AI 기술혁신 생태계"입니다.</p>
 </div>
+    
+    <h3>관련 사이트</h3>
+    <div class="links">
+        <a href="https://example1.com" target="_blank">
+            <img src="site1.jpg" alt="국세청">
+        </a>
+        <a href="https://example2.com" target="_blank">
+            <img src="site2.jpg" alt="중앙전파관리소-서울">
+        </a>
+        <a href="https://example3.com" target="_blank">
+            <img src="site3.jpg" alt="사이트3">
+        </a>
+    </div>
+
 
 <footer style="line-height: 1.0;">
     <p><strong>사단법인 PSC AI CLUSTER</strong></p>

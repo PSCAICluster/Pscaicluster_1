@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사단법인 PSC AI CLUSTER</title>
+    
+    <!-- 구글 폰트 추가 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+
     <style>
         :root {
             --main-bg-color: #ffffff;
@@ -13,6 +16,7 @@
             --link-color: #0b3d91;
         }
 
+        /* 기본 스타일 */
         body {
             font-family: 'Noto Sans', sans-serif;
             margin: 0;
@@ -21,6 +25,7 @@
             color: var(--text-color);
         }
         
+        /* 헤더 스타일 */
         header {
             display: flex;
             justify-content: space-between;
@@ -37,42 +42,88 @@
             cursor: pointer;
         }
 
+        /* 네비게이션 메뉴 - 제목과 가까워지도록 위치 조정 */
         nav {
             display: flex;
             align-items: center;
+            margin-left: -50px; /* 제목과 간격 조정 */
         }
 
         nav a {
             color: var(--link-color);
             text-decoration: none;
-            margin-left: 30px;
+            margin-left: 20px;
             font-size: 14px; /* 제목보다 작은 글씨 */
         }
 
+        /* 회사 CI 로고 */
         .company-ci {
             width: 50px;
             height: 50px;
-            background: url('images/CI_logo.jpg') no-repeat center center/contain; /* 회사 CI 이미지 */
+            background: url('images/CI_logo.jpg') no-repeat center center/contain;
             border-radius: 8px;
         }
 
+        /* 메인 배너 스타일 */
         .hero {
-            background-color: #f5f5f5;
+            background: url('public/ai-theme-image.png') no-repeat center center/cover;
             text-align: center;
             padding: 100px 20px;
+            color: white;
         }
 
+        .hero h2 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* 본문 스타일 */
         .content {
             padding: 30px;
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
+        .content h3 {
+            color: var(--accent-color);
+        }
+
+        /* 관련 사이트 섹션 */
+        .related-title {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .links a img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .links a img:hover {
+            transform: scale(1.1);
+        }
+
+        /* 푸터 스타일 */
         footer {
             background-color: #eeeeee;
             padding: 20px;
-            text-align: left; /* 좌측 정렬 */
-            font-size: 12px; /* 작은 글씨 */
-            line-height: 1.2; /* 줄 간격 조정 */
+            text-align: left;
+            font-size: 12px;
+            line-height: 1.2;
             margin-top: 30px;
         }
 
@@ -81,56 +132,43 @@
 <body>
 
 <header>
+    <h1 onclick="window.location.href='index.html'">PSC AI Cluster</h1>
     <nav>
         <a href="intro.html" title="사단법인 소개 페이지로 이동">사단법인 소개</a>
         <a href="board.html" title="게시판으로 이동">게시판</a>
     </nav>
-    <h1 onclick="window.location.href='index.html'">PSC AI Cluster</h1>
     <div class="company-ci"></div>
 </header>
 
-<div class="hero"></div>
-
-<style>
-    header {
-        display: flex;
-        align-items: left;
-        justify-content: flex-start; /* 요소들을 왼쪽 정렬 */
-        gap: 20px; /* 요소 간격 */
-        padding: 10px;
-    }
-
-    nav {
-        display: flex;
-        gap: 15px; /* 링크 간격 */
-    }
-</style>
+<!-- 메인 이미지 배너 -->
 <div class="hero">
-    <!-- 여기에 이미지나 회사 느낌을 표현할 수 있는 콘텐츠를 추가하세요 -->
     <h2>환영합니다! PSC AI CLUSTER의 미래에 동참하세요.</h2>
 </div>
 
-<div class="content" style="text-align: center;">
+<!-- 소개 섹션 -->
+<div class="content">
     <h3>하남 교산 AI 혁신클러스터</h3>
-    <p>AI+X 대학원, 각급 연구센터, KT AI-Infra, 교육지원센터 등이 핵심시설로 구성될 "하남 교산 AI 혁신클러스터"는 전 세계 AI+X 기반의 첨단 기술과 R&D 인재를 흡수/배출하는 허브이자 기술과 인재를 확보하기 위해 글로벌 기업이 찾아오는 "미래산업형 AI 기술혁신 생태계"입니다.</p>
+    <p>AI+X 대학원, 각급 연구센터, KT AI-Infra, 교육지원센터 등이 핵심시설로 구성될 "하남 교산 AI 혁신클러스터"는 
+       전 세계 AI+X 기반의 첨단 기술과 R&D 인재를 흡수/배출하는 허브이자 기술과 인재를 확보하기 위해 글로벌 기업이 찾아오는 
+       "미래산업형 AI 기술혁신 생태계"입니다.</p>
 </div>
-    
-   <h3 class="related-title">관련 사이트</h3>
+
+<!-- 관련 사이트 링크 -->
+<h3 class="related-title">관련 사이트</h3>
 <div class="links">
     <a href="https://www.nts.go.kr/" target="_blank">
-        <img src="site1.jpg" alt="국세청">
+        <img src=".jpg" alt="국세청">
     </a>
     <a href="https://www.crms.go.kr/lay1/bbs/S1T222C229/G/60/list.do#n" target="_blank">
-        <img src="site2.jpg" alt="중앙전파관리소-서울">
+        <img src="public/site2.jpg" alt="중앙전파관리소-서울">
     </a>
     <a href="https://example3.com" target="_blank">
-        <img src="site3.jpg" alt="국민권익위원회">
+        <img src="public/site3.jpg" alt="국민권익위원회">
     </a>
 </div>
 
-
-
-<footer style="line-height: 1.0;">
+<!-- 푸터 -->
+<footer>
     <p><strong>사단법인 피에스씨인공지능클러스터(PSC AI Cluster)</strong></p>
     <p>주소: 서울특별시 강남구 테헤란로 310, 708호(역삼동)</p>
 </footer>

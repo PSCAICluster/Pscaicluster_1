@@ -4,7 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사단법인 소개 | PSC AI Cluster</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- 구글 폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+
+    <style>
+        :root {
+            --main-bg-color: #ffffff;
+            --accent-color: #0b3d91; /* 딥 블루 계열 */
+            --text-color: #000000; /* 검정 계열 */
+            --link-color: #0b3d91;
+        }
+
+        /* 기본 스타일 */
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+        }
+
+        /* 헤더 스타일 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--main-bg-color);
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: var(--accent-color);
+            cursor: pointer;
+        }
+
+        /* 네비게이션 메뉴 */
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: -50px; /* 제목과 간격 조정 */
+        }
+
+        nav a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        /* 메인 배너 스타일 */
+        .hero {
+            background: url('images/Ai_person.jpg') no-repeat center center/cover;
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* 콘텐츠 스타일 */
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .content li {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        footer p strong {
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
 
@@ -39,4 +152,3 @@
 
 </body>
 </html>
-

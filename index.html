@@ -81,14 +81,30 @@
 <body>
 
 <header>
-    <h1 onclick="window.location.href='index.html'">PSC AI Cluster</h1>
     <nav>
         <a href="intro.html" title="사단법인 소개 페이지로 이동">사단법인 소개</a>
         <a href="board.html" title="게시판으로 이동">게시판</a>
     </nav>
+    <h1 onclick="window.location.href='index.html'">PSC AI Cluster</h1>
     <div class="company-ci"></div>
 </header>
 
+<div class="hero"></div>
+
+<style>
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* 요소들을 왼쪽 정렬 */
+        gap: 20px; /* 요소 간격 */
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        gap: 15px; /* 링크 간격 */
+    }
+</style>
 <div class="hero">
     <!-- 여기에 이미지나 회사 느낌을 표현할 수 있는 콘텐츠를 추가하세요 -->
     <h2>환영합니다! PSC AI CLUSTER의 미래에 동참하세요.</h2>

@@ -8,7 +8,7 @@
     <!-- 구글 폰트 추가 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
 
-    <style>
+     <style>
         :root {
             --main-bg-color: #ffffff;
             --accent-color: #0b3d91; /* 딥 블루 계열 */
@@ -24,7 +24,7 @@
             background-color: var(--main-bg-color);
             color: var(--text-color);
         }
-
+        
         /* 헤더 스타일 */
         header {
             display: flex;
@@ -33,6 +33,7 @@
             padding: 20px;
             background-color: var(--main-bg-color);
             border-bottom: 1px solid #ddd;
+            
         }
 
         header h1 {
@@ -40,12 +41,12 @@
             margin: 0;
             color: var(--accent-color);
             cursor: pointer;
-                }
+        }
 
         /* 네비게이션 메뉴 - 제목과 가까워지도록 위치 조정 */
         nav {
             display: flex;
-            align-items: left;
+            align-items: center;
             margin-left: -1400px; /* 제목과 간격 조정 */
         }
 
@@ -56,6 +57,13 @@
             font-size: 14px; /* 제목보다 작은 글씨 */
         }
 
+        /* 회사 CI 로고 */
+        .company-ci {
+            width: 50px;
+            height: 50px;
+            background: url('images/CI_logo.jpg') no-repeat center center/contain;
+            border-radius: 8px;
+        }
         /* 메인 배너 스타일 */
         .hero {
             background: url('images/Ai_person.jpg') no-repeat center center/cover;

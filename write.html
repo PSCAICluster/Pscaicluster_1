@@ -4,18 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>글 작성 | PSC AI Cluster</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+ <!-- 구글 폰트 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
 
-<header>
-    <h1 onclick="window.location.href='index.html'">PSC AI Cluster</h1>
-    <nav>
-        <a href="intro.html">사단법인 소개</a>
-        <a href="board.html">게시판</a>
-    </nav>
-</header>
+    <style>
+        :root {
+            --main-bg-color: #ffffff;
+            --accent-color: #0b3d91; /* 딥 블루 계열 */
+            --text-color: #000000; /* 검정 계열 */
+            --link-color: #0b3d91;
+        }
 
+        /* 기본 스타일 */
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+        }
+        
+        /* 헤더 스타일 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--main-bg-color);
+            border-bottom: 1px solid #ddd;
+            
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: var(--accent-color);
+            cursor: pointer;
+        }
+
+        /* 네비게이션 메뉴 - 제목과 가까워지도록 위치 조정 */
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: -1400px; /* 제목과 간격 조정 */
+        }
+
+        nav a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px; /* 제목보다 작은 글씨 */
+        }
+
+        /* 회사 CI 로고 */
+        .company-ci {
+            width: 50px;
+            height: 50px;
+            background: url('images/CI_logo.jpg') no-repeat center center/contain;
+            border-radius: 8px;
+        }
+        
 <div class="hero">
     <h2>자유 게시판에 글 작성하기</h2>
 </div>

@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판 | PSC AI Cluster</title>
-    
-    <!-- 구글 폰트 추가 -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
 
     <style>
         :root {
             --main-bg-color: #ffffff;
-            --accent-color: #0b3d91; /* 딥 블루 계열 */
-            --text-color: #000000; /* 검정 계열 */
+            --accent-color: #0b3d91;
+            --text-color: #000000;
             --link-color: #0b3d91;
         }
 
-        /* 기본 스타일 */
         body {
             font-family: 'Noto Sans', sans-serif;
             margin: 0;
@@ -24,65 +20,7 @@
             background-color: var(--main-bg-color);
             color: var(--text-color);
         }
-        
-        /* 헤더 스타일 */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: var(--main-bg-color);
-            border-bottom: 1px solid #ddd;
-            position: relative;
-        }
 
-        header h1 {
-            font-size: 24px;
-            margin: 0;
-            color: var(--accent-color);
-            cursor: pointer;
-        }
-
-        /* 네비게이션 메뉴 - 중앙 정렬 */
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        nav a {
-            color: var(--link-color);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 14px;
-        }
-
-        /* 회사 CI 로고 */
-        .company-ci {
-            width: 50px;
-            height: 50px;
-            background: url('images/CI_logo.jpg') no-repeat center center;
-            background-size: contain;
-            display: block;
-        }
-
-        /* 메인 배너 스타일 */
-        .hero {
-            background: url('images/circle_ai.jpg') no-repeat center center/cover;
-            text-align: center;
-            padding: 80px 20px;
-            color: white;
-        }
-
-        .hero h2 {
-            font-size: 36px;
-            font-weight: bold;
-        }
-
-        /* 콘텐츠 섹션 */
         .content {
             padding: 40px 20px;
             max-width: 1200px;
@@ -90,69 +28,18 @@
             text-align: center;
         }
 
-        .content h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .content ul {
+        .blog-posts ul {
             list-style-type: none;
             padding: 0;
         }
 
-        .content ul li {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .content ul li a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .content ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .content p {
-            font-size: 16px;
-            margin-top: 20px;
-        }
-
-        /* 버튼 스타일 */
-        button {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #092c6a;
-        }
-
-        /* 블로그 공지사항 목록 스타일 */
-        .blog-posts {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .blog-posts ul {
-            padding: 0;
-        }
-
         .blog-posts li {
-            list-style: none;
             margin: 10px 0;
+            font-size: 16px;
         }
 
         .blog-posts a {
             color: var(--link-color);
-            font-size: 16px;
             text-decoration: none;
             font-weight: bold;
         }
@@ -160,43 +47,11 @@
         .blog-posts a:hover {
             text-decoration: underline;
         }
-
-        /* 푸터 스타일 */
-        footer {
-            background-color: #eeeeee;
-            padding: 20px;
-            text-align: left;
-            font-size: 12px;
-            line-height: 1.2;
-            margin-top: 30px;
-        }
-
     </style>
 </head>
 <body>
 
-<header>
-    <h1 onclick="window.location.href='index.html'">PSC AI Cluster</h1>
-    <nav>
-        <a href="intro.html">사단법인 소개</a>
-        <a href="board.html">게시판</a>
-    </nav>
-    <div class="company-ci"></div>
-</header>
-
-<div class="hero">
-    <h2>공지사항 및 커뮤니티</h2>
-</div>
-
 <div class="content">
-    <h3>최신 공지사항</h3>
-
-    <ul>
-        <li><a href="#">[공지] 아래 공지사항 확인하기 버튼을 눌러 확인하세요</a></li>
-    </ul>
-
-    <button onclick="window.location.href='https://pscaicluster.blogspot.com/'">공지사항 목록 확인하기</button>
-
     <h3>🔹 블로그 공지사항 목록</h3>
     <div class="blog-posts">
         <ul id="blog-post-list">
@@ -205,49 +60,34 @@
     </div>
 </div>
 
-<footer>
-    <p><strong>사단법인 PSC AI Cluster</strong></p>
-    <p>주소: 서울특별시 강남구 테헤란로 310, 708호(역삼동)</p>
-</footer>
-
 <script>
-    async function fetchBlogPosts() {
-        const url = "https://pscaicluster.blogspot.com/feeds/posts/default?alt=json";
-
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-
-            const entries = data.feed.entry;
-            if (!entries || entries.length === 0) {
-                document.getElementById("blog-post-list").innerHTML = "<li>공지사항이 없습니다.</li>";
-                return;
-            }
-
-            let postHTML = "";
-            entries.slice(0, 5).forEach((post, index) => {
-                const title = post.title.$t;
-                const link = post.link.find(l => l.rel === "alternate").href;
-                const date = new Date(post.published.$t).toLocaleDateString();
-
-                postHTML += `
-                    <li>
-                        <a href="${link}" target="_blank">${title}</a> <br>
-                        <small>${date}</small>
-                    </li>
-                `;
-            });
-
-            document.getElementById("blog-post-list").innerHTML = postHTML;
-
-        } catch (error) {
-            console.error("블로그 데이터를 불러오는 중 오류 발생:", error);
-            document.getElementById("blog-post-list").innerHTML = "<li>데이터를 불러오지 못했습니다.</li>";
+    function fetchBlogPosts(json) {
+        const entries = json.feed.entry;
+        if (!entries || entries.length === 0) {
+            document.getElementById("blog-post-list").innerHTML = "<li>공지사항이 없습니다.</li>";
+            return;
         }
-    }
 
-    window.onload = fetchBlogPosts;
+        let postHTML = "";
+        entries.slice(0, 5).forEach((post) => {
+            const title = post.title.$t;
+            const link = post.link.find(l => l.rel === "alternate").href;
+            const date = new Date(post.published.$t).toLocaleDateString();
+
+            postHTML += `
+                <li>
+                    <a href="${link}" target="_blank">${title}</a><br>
+                    <small>${date}</small>
+                </li>
+            `;
+        });
+
+        document.getElementById("blog-post-list").innerHTML = postHTML;
+    }
 </script>
+
+<!-- JSONP 방식으로 구글 블로그 데이터 불러오기 -->
+<script src="https://pscaicluster.blogspot.com/feeds/posts/default?alt=json-in-script&callback=fetchBlogPosts"></script>
 
 </body>
 </html>

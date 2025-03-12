@@ -28,11 +28,12 @@
         /* 헤더 스타일 */
         header {
             display: flex;
-            justify-content: space-between; /* 제목과 메뉴를 분리 */
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
             background-color: var(--main-bg-color);
             border-bottom: 1px solid #ddd;
+            
         }
 
         header h1 {
@@ -41,15 +42,14 @@
             color: var(--accent-color);
             cursor: pointer;
         }
-        
-        /* 네비게이션 메뉴 - 중앙 정렬 */
+
+        /* 네비게이션 메뉴 - 제목과 가까워지도록 위치 조정 */
         nav {
             display: flex;
-            justify-content: center;  /* 중앙 정렬 */
             align-items: center;
-            width: 100%;
+            margin-left: -1400px; /* 제목과 간격 조정 */
         }
-         
+
         nav a {
             color: var(--link-color);
             text-decoration: none;

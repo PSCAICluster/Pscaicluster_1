@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 목록 | PSC AI Cluster</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    
+    <style>
+        :root {
+            --main-bg-color: #ffffff;
+            --accent-color: #0b3d91;
+            --text-color: #000000;
+            --link-color: #0b3d91;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--main-bg-color);
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: var(--accent-color);
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .write-button {
+            display: block;
+            margin: 20px auto;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 150px;
+        }
+
+        .write-button:hover {
+            background-color: #092c6a;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 onclick="window.location.href='index.html'">PSC AI Cluster</h1>
+    <nav>
+        <a href="index.html">홈</a>
+        <a href="board.html">게시판</a>
+        <a href="intro.html">공지사항</a>
+    </nav>
+</header>
+
+<div class="content">
+    <h2>게시판 목록</h2>
+
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><a href="post.html?post_id=1">첫 번째 글 제목</a></td>
+            <td>2024-03-12</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="post.html?post_id=2">두 번째 글 제목</a></td>
+            <td>2024-03-12</td>
+        </tr>
+    </table>
+
+    <a href="write.html" class="write-button">글 작성하기</a>
+</div>
+
+</body>
+</html>

@@ -12,8 +12,6 @@
             --accent-color: #0b3d91; /* 딥 블루 계열 */
             --text-color: #000000; /* 검정 계열 */
             --link-color: #0b3d91;
-            --button-color: #007bff; /* 버튼 색 */
-            --button-hover-color: #0056b3; /* 버튼 hover 색 */
         }
 
         /* 기본 스타일 */
@@ -24,7 +22,7 @@
             background-color: var(--main-bg-color);
             color: var(--text-color);
         }
-
+        
         /* 헤더 스타일 */
         header {
             display: flex;
@@ -33,6 +31,7 @@
             padding: 20px;
             background-color: var(--main-bg-color);
             border-bottom: 1px solid #ddd;
+            
         }
 
         header h1 {
@@ -42,17 +41,26 @@
             cursor: pointer;
         }
 
-        /* 네비게이션 메뉴 스타일 */
+        /* 네비게이션 메뉴 - 제목과 가까워지도록 위치 조정 */
         nav {
             display: flex;
             align-items: center;
+            margin-left: -1400px; /* 제목과 간격 조정 */
         }
 
         nav a {
             color: var(--link-color);
             text-decoration: none;
             margin-left: 20px;
-            font-size: 14px;
+            font-size: 14px; /* 제목보다 작은 글씨 */
+        }
+
+        /* 회사 CI 로고 */
+        .company-ci {
+            width: 50px;
+            height: 50px;
+            background: url('images/CI_logo.jpg') no-repeat center center/contain;
+            border-radius: 8px;
         }
 
         /* 메인 배너 스타일 */

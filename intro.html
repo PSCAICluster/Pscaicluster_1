@@ -23,17 +23,16 @@
             padding: 0;
             background-color: var(--main-bg-color);
             color: var(--text-color);
-        }
+               }
         
         /* 헤더 스타일 */
         header {
             display: flex;
-             justify-content: center; /* 수평 중앙 정렬 */
+            justify-content: space-between; /* 제목과 메뉴를 분리 */
             align-items: center;
             padding: 20px;
             background-color: var(--main-bg-color);
             border-bottom: 1px solid #ddd;
-            
         }
 
         header h1 {
@@ -43,11 +42,12 @@
             cursor: pointer;
         }
         
-        /* 네비게이션 메뉴 - 제목과 가까워지도록 위치 조정 */
+        /* 네비게이션 메뉴 - 중앙 정렬 */
         nav {
             display: flex;
+            justify-content: center;  /* 중앙 정렬 */
             align-items: center;
-            margin-left: -1400px; /* 제목과 간격 조정 */
+            width: 100%;
         }
          
         nav a {

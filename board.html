@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판 | PSC AI Cluster</title>
     
-   <!-- 구글 폰트 추가 -->
+    <!-- 구글 폰트 추가 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
 
     <style>
@@ -33,7 +33,6 @@
             padding: 20px;
             background-color: var(--main-bg-color);
             border-bottom: 1px solid #ddd;
-            
         }
 
         header h1 {
@@ -42,27 +41,32 @@
             color: var(--accent-color);
             cursor: pointer;
         }
-        
-        /* 네비게이션 메뉴 - 제목과 가까워지도록 위치 조정 */
+
+        /* 네비게이션 메뉴 - 중앙 정렬 */
         nav {
             display: flex;
+            justify-content: center;
             align-items: center;
-            margin-left: -1400px; /* 제목과 간격 조정 */
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         nav a {
             color: var(--link-color);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px; /* 제목보다 작은 글씨 */
+            margin: 0 15px;
+            font-size: 14px;
         }
 
         /* 회사 CI 로고 */
         .company-ci {
             width: 50px;
             height: 50px;
-            background: url('images/CI_logo.jpg') no-repeat center center/contain;
-            border-radius: 8px;
+            background: url('images/CI_logo.jpg') no-repeat center center;
+            background-size: contain;
+            display: block;
         }
 
         /* 메인 배너 스타일 */
@@ -127,9 +131,10 @@
         }
 
         button:hover {
-            background-color: #092c6a; /* 살짝 어두운 블루 */
+            background-color: #092c6a;
         }
-           /* 푸터 스타일 */
+
+        /* 푸터 스타일 */
         footer {
             background-color: #eeeeee;
             padding: 20px;
@@ -138,6 +143,7 @@
             line-height: 1.2;
             margin-top: 30px;
         }
+
     </style>
 </head>
 <body>
@@ -148,6 +154,7 @@
         <a href="intro.html">사단법인 소개</a>
         <a href="board.html">게시판</a>
     </nav>
+    <div class="company-ci"></div>
 </header>
 
 <div class="hero">
@@ -164,7 +171,7 @@
 
     <h3>자유 게시판</h3>
     <p>회원들과 자유롭게 의견을 나누고 정보를 공유하세요!</p>
-  <button onclick="window.location.href='write.html'">글 작성하기</button>
+    <button onclick="window.location.href='write.html'">글 작성하기</button>
 </div>
 
 <footer>
@@ -174,4 +181,3 @@
 
 </body>
 </html>
-

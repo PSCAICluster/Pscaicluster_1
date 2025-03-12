@@ -33,6 +33,7 @@
             padding: 20px;
             background-color: var(--main-bg-color);
             border-bottom: 1px solid #ddd;
+            position: relative;
         }
 
         header h1 {
@@ -47,7 +48,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -87,6 +87,7 @@
             padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .content h3 {
@@ -134,6 +135,32 @@
             background-color: #092c6a;
         }
 
+        /* 블로그 공지사항 목록 스타일 */
+        .blog-posts {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .blog-posts ul {
+            padding: 0;
+        }
+
+        .blog-posts li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .blog-posts a {
+            color: var(--link-color);
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .blog-posts a:hover {
+            text-decoration: underline;
+        }
+
         /* 푸터 스타일 */
         footer {
             background-color: #eeeeee;
@@ -163,16 +190,64 @@
 
 <div class="content">
     <h3>최신 공지사항</h3>
+
     <ul>
-        <li><a href="#">[공지] 아래 공지사항 확인하기 버튼을 눌러 확인 하세요</a></li>
-        
+        <li><a href="#">[공지] 아래 공지사항 확인하기 버튼을 눌러 확인하세요</a></li>
+    </ul>
+
     <button onclick="window.location.href='https://pscaicluster.blogspot.com/'">공지사항 목록 확인하기</button>
+
+    <h3>🔹 블로그 공지사항 목록</h3>
+    <div class="blog-posts">
+        <ul id="blog-post-list">
+            <li>공지사항을 불러오는 중...</li>
+        </ul>
+    </div>
 </div>
 
 <footer>
     <p><strong>사단법인 PSC AI Cluster</strong></p>
     <p>주소: 서울특별시 강남구 테헤란로 310, 708호(역삼동)</p>
 </footer>
+
+<script>
+    async function fetchBlogPosts() {
+        const url = "https://pscaicluster.blogspot.com/feeds/posts/default?alt=json";
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            const entries = data.feed.entry;
+            if (!entries || entries.length === 0) {
+                document.getElementById("blog-post-list").innerHTML = "<li>공지사항이 없습니다.</li>";
+                return;
+            }
+
+            let postHTML = "";
+            entries.slice(0, 5).forEach((post, index) => {
+                const title = post.title.$t;
+                const link = post.link.find(l => l.rel === "alternate").href;
+                const date = new Date(post.published.$t).toLocaleDateString();
+
+                postHTML += `
+                    <li>
+                        <a href="${link}" target="_blank">${title}</a> <br>
+                        <small>${date}</small>
+                    </li>
+                `;
+            });
+
+            document.getElementById("blog-post-list").innerHTML = postHTML;
+
+        } catch (error) {
+            console.error("블로그 데이터를 불러오는 중 오류 발생:", error);
+            document.getElementById("blog-post-list").innerHTML = "<li>데이터를 불러오지 못했습니다.</li>";
+        }
+    }
+
+    window.onload = fetchBlogPosts;
+</script>
 
 </body>
 </html>
